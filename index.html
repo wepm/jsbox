@@ -9,27 +9,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="keywords" content="JSBox,js沙盒环境,在线运行代码,在线演示">
+    <meta name="keywords" content="JSBox,在线运行代码,在线演示,js沙盒环境">
     <meta name="description" content="js在线运行环境,支持引入npm包">
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/theajack/jsbox/cdn/assets/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://fastly.jsdelivr.net/gh/wepm/jsbox/cdn/assets/icon.ico" type="image/x-icon">
     <title>JSBox js在线运行环境</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theajack/jsbox/cdn/assets/css/editor/editor.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theajack/jsbox/cdn/assets/css/editor/editor.main.css">
-    <link href="https://cdn.jsdelivr.net/gh/theajack/jsbox@gh-pages/main.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/wepm/jsbox/cdn/assets/css/editor/editor.css">
+	<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/wepm/jsbox/cdn/assets/css/editor/editor.main.css">
+    <link href="https://fastly.jsdelivr.net/gh/wepm/jsbox@gh-pages/main.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/gh/theajack/jsbox/cdn/assets/js/lib/lib.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/theajack/jsbox/cdn/assets/js/lib/env.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/theajack/jsbox/cdn/assets/js/lib/babel.standalone.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/theajack/jsbox/cdn/assets/js/lib/less.standalone.js" ></script>
+    <script src="https://fastly.jsdelivr.net/gh/wepm/jsbox/cdn/assets/js/lib/lib.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/wepm/jsbox/cdn/assets/js/lib/env.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/wepm/jsbox/cdn/assets/js/lib/babel.standalone.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/wepm/jsbox/cdn/assets/js/lib/less.standalone.js" ></script>
     <!-- <script>var require = { paths: { 'vs': 'http://localhost:8080/vs' } };</script> -->
     <script>
-        var require = { paths: { 'vs': 'https://cdn.jsdelivr.net/gh/theajack/jsbox/cdn/assets/js/vs' } };
+        var require = { paths: { 'vs': 'https://fastly.jsdelivr.net/gh/wepm/jsbox/cdn/assets/js/vs' } };
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/theajack/jsbox/cdn/assets/js/vs/loader.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/theajack/jsbox/cdn/assets/js/vs/editor/editor.main.nls.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/theajack/jsbox/cdn/assets/js/vs/editor/editor.main.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/wepm/jsbox/cdn/assets/js/vs/loader.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/wepm/jsbox/cdn/assets/js/vs/editor/editor.main.nls.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/wepm/jsbox/cdn/assets/js/vs/editor/editor.main.js"></script>
     <script>
         window.DEFINE = window.define;
         window.useDefine = function(){
@@ -39,9 +39,21 @@
             window.__define = window.define;
             window.define = null;
         }
+        window.addEventListener('load', function () {
+            var src= [
+                'https://kainy.cn/js/common.js'
+            ];
+            for(var i= src.length; i> 0; i--){
+                var c = document.createElement('script'); 
+                c.type = 'text/javascript';
+                c.async = true;
+                c.src = src[i-1];
+                var h = document.getElementsByTagName('script')[0];
+                h.parentNode.insertBefore(c, h);
+            }
+        })
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/theajack/jsbox@gh-pages/main.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/theajack/cdn/js/stat.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/wepm/jsbox@gh-pages/main.min.js"></script>
 </body>
 
 </html>
