@@ -253,7 +253,7 @@ export let menus = [
             title: 'Github主页',
             icon: 'github',
             onclick () {
-                window.open('https://www.github.com/theajack/jsbox');
+                window.open('https://www.github.com');
             },
             type: MENU_TYPE.LINK,
         }, {
