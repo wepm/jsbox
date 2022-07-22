@@ -39,21 +39,24 @@
             window.__define = window.define;
             window.define = null;
         }
-        window.addEventListener('load', function () {
-            var src= [
-                'https://kainy.cn/js/common.js'
-            ];
-            for(var i= src.length; i> 0; i--){
-                var c = document.createElement('script'); 
-                c.type = 'text/javascript';
-                c.async = true;
-                c.src = src[i-1];
-                var h = document.getElementsByTagName('script')[0];
-                h.parentNode.insertBefore(c, h);
-            }
-        })
     </script>
     <script src="https://fastly.jsdelivr.net/gh/wepm/jsbox@gh-pages/main.min.js"></script>
+<script>
+    var _paq = window._paq = window._paq || [];
+    _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+    _paq.push(["setDomains", ["*.github.io", "*.gqmg.com", "*.yongan.org", '*.servicewechat.com', '*.doxmate.cool', '*.xn--b2w966e.xn--fiqs8s', '*.kainy.cn']]);
+    _paq.push(["setExcludedQueryParams", ["_","rev","ver"]]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="https://a.gqmg.com/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <noscript><p><img src="https://a.gqmg.com/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
 </body>
 
 </html>

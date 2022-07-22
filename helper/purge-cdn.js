@@ -12,7 +12,7 @@ console.log('Purge docs CDN...');
     '/cdn/assets/js/lib/lib.js',
     '/cdn/assets/js/lib/env.js'
 ].forEach(path => {
-    https.get(`https://purge.jsdelivr.net/gh/theajack/jsbox${path}`, () => {
+    https.get(`https://purge.jsdelivr.net/gh/wepm/jsbox${path}`, () => {
         console.log(`Purge ${path} done`);
     });
 });
