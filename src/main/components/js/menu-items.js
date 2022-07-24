@@ -230,7 +230,7 @@ export let menus = [
             onclick () {
                 event.emit(EVENT.USE_CODE, (code) => {
                     const host = `${location.protocol}//${location.host}/`;
-                    let url = `${host}jsbox?theme=${theme.get()}&lang=${language.get()}&lib=${Libs.join(',')}`;
+                    let url = `${host}?theme=${theme.get()}&lang=${language.get()}&lib=${Libs.join(',')}`;
                     ['mes', 'remind', 'run'].forEach((item) => {
                         let value = getUrlParam(item);
                         if (value) {
@@ -278,14 +278,15 @@ export let menus = [
             icon: 'info',
             onclick () {
                 const host = `${location.protocol}//${location.host}/`;
-                window.open(`${host}jsbox#hello`);
+                window.open(`${host}#hello`);
             },
             type: MENU_TYPE.LINK,
         }, {
             title: '反馈意见',
             icon: 'edit',
             onclick () {
-                window.open('https://www.github.com/theajack/jsbox/issues/new');
+                // location.href = 'mailto:gt@kainy.cn';
+                window.open(`mailto:gt@kainy.cn`);
             },
             type: MENU_TYPE.LINK,
         }]
